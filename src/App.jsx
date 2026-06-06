@@ -1,25 +1,17 @@
-import { Product } from './pages/Product.jsx'
-import { LandingPage } from './pages/LandingPage.jsx'
+import { Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar.jsx'
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import { Footer } from './components/Footer.jsx'
 
 function App() {
   return (
-
-    
-    <BrowserRouter>
+    <div>
       <Navbar />
-
-      <Routes>
-       
-        <Route path="/" element={<LandingPage />} />
-        
-        <Route path="/product" element={<Product />} />
-      </Routes>
-      
-    </BrowserRouter>
+      <div>
+        <Outlet />  {/* React Router เอา LandingPage หรือ Product มาใส่ตรงนี้ */}
+      </div>
+      <Footer />
+    </div>
   )
 }
 
